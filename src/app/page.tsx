@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowRight,
   Shield,
@@ -71,21 +72,33 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mt-14 flex flex-wrap gap-2.5">
-                {[
-                  "Claude Code",
-                  "Claude Cowork",
-                  "OpenAI Codex",
-                  "MCP",
-                  "Custom LLMs",
-                ].map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-foreground/8 px-3.5 py-1.5 font-mono text-xs text-foreground/40"
-                  >
-                    {tool}
+              <div className="mt-14">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground/30">
+                  Works with
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4">
+                  {[
+                    { name: "Claude Code", logo: "/logos/anthropic.png" },
+                    { name: "OpenAI Codex", logo: "/logos/openai.png" },
+                    { name: "Cursor", logo: "/logos/cursor.png" },
+                  ].map((tool) => (
+                    <div key={tool.name} className="flex items-center gap-2.5">
+                      <Image
+                        src={tool.logo}
+                        alt={tool.name}
+                        width={24}
+                        height={24}
+                        className="opacity-40 grayscale"
+                      />
+                      <span className="text-sm font-semibold text-foreground/35">
+                        {tool.name}
+                      </span>
+                    </div>
+                  ))}
+                  <span className="rounded-full border border-foreground/8 px-3 py-1 font-mono text-xs text-foreground/30">
+                    + MCP / SKILL.md
                   </span>
-                ))}
+                </div>
               </div>
             </div>
           </div>
@@ -394,23 +407,22 @@ export default function Home() {
             <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-foreground/30">
               Enterprise AI experience across
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
               {[
-                "AGL",
-                "QBE",
-                "Harvey Norman",
-                "Specsavers",
-                "Open Universities AU",
-                "Budget Direct",
-                "Simply Energy",
-                "Cambridge Uni Press",
-              ].map((logo) => (
-                <span
-                  key={logo}
-                  className="text-sm font-semibold uppercase tracking-[0.1em] text-foreground/20"
-                >
-                  {logo}
-                </span>
+                { name: "AGL", logo: "/logos/agl.png" },
+                { name: "QBE", logo: "/logos/qbe.png" },
+                { name: "Harvey Norman", logo: "/logos/harveynorman.png" },
+                { name: "Specsavers", logo: "/logos/specsavers.png" },
+                { name: "Open Universities Australia", logo: "/logos/oua.png" },
+              ].map((client) => (
+                <Image
+                  key={client.name}
+                  src={client.logo}
+                  alt={client.name}
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto opacity-30 grayscale"
+                />
               ))}
             </div>
           </div>
