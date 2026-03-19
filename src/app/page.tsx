@@ -82,7 +82,6 @@ export default function Home() {
                     { name: "OpenAI Codex", logo: "/logos/openai.png" },
                     { name: "Cursor", logo: "/logos/cursor.png" },
                     { name: "MCP Protocol", logo: "/logos/mcp.png" },
-                    { name: "Custom Agents", logo: "/logos/huggingface.png" },
                   ].map((tool) => (
                     <div key={tool.name} className="flex items-center gap-2.5">
                       <Image
@@ -97,6 +96,12 @@ export default function Home() {
                       </span>
                     </div>
                   ))}
+                  <div className="flex items-center gap-2.5">
+                    <Cpu className="h-6 w-6 opacity-35" />
+                    <span className="text-sm font-semibold text-foreground/35">
+                      Custom Agents
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
