@@ -402,27 +402,31 @@ export default function Home() {
         </section>
 
         {/* Proof strip */}
-        <section className="border-y border-foreground/8 py-14">
+        <section className="border-y border-foreground/8 py-16">
           <div className="mx-auto max-w-5xl px-6">
             <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-foreground/30">
               Enterprise AI experience across
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            <div className="mt-10 grid grid-cols-3 items-center justify-items-center gap-8 sm:grid-cols-5">
               {[
                 { name: "AGL", logo: "/logos/agl.png" },
                 { name: "QBE", logo: "/logos/qbe.png" },
                 { name: "Harvey Norman", logo: "/logos/harveynorman.png" },
                 { name: "Specsavers", logo: "/logos/specsavers.png" },
-                { name: "Open Universities Australia", logo: "/logos/oua.png" },
+                { name: "Open Universities AU", logo: "/logos/oua.png" },
               ].map((client) => (
-                <Image
-                  key={client.name}
-                  src={client.logo}
-                  alt={client.name}
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto opacity-30 grayscale"
-                />
+                <div key={client.name} className="flex items-center gap-2.5">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={400}
+                    height={400}
+                    className="h-8 w-8 rounded-md object-contain grayscale opacity-60"
+                  />
+                  <span className="text-sm font-semibold text-foreground/30">
+                    {client.name}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
