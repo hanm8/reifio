@@ -95,9 +95,11 @@ export default function Home() {
                       </span>
                     </div>
                   ))}
-                  <span className="rounded-full border border-foreground/8 px-3 py-1 font-mono text-xs text-foreground/30">
-                    + MCP / SKILL.md
-                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-sm font-semibold text-foreground/35">
+                      MCP Protocol
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
