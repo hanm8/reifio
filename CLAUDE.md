@@ -81,13 +81,19 @@ AGL, QBE, Harvey Norman, Specsavers, Open Universities Australia, Budget Direct,
 - Anthropic opened Sydney office March 10, 2026 (AU is top-4 Claude market)
 - Active telco deal under Rebotify (chatbot-to-LLM upgrade)
 
-### Aesthetic
+### Aesthetic — "Chromatic Minimalism"
 
-- Warm off-white (#fafaf8) background
-- Near-black (#1a1a18) text
-- Geist font (same family as Anthropic/Vercel)
-- Monochrome — no color
-- Minimal, premium, intentional
+- **Surface hierarchy:** warm off-white (#f9f9f6) base, layered with #f4f4f1 and #ffffff for depth
+- **Deep tonal areas:** primary-container (#1c1b1b) for high-impact dark sections — never pure #000 for text
+- **Text:** on-surface (#1a1c1b) for headings, on-surface-variant (#444748) for body — "inked" not "stark"
+- **Typography:** Geist (sans) for prose, Geist Mono for labels/numbers/metadata — always uppercase with wide tracking
+- **Green accent:** secondary (#006c4b) used surgically on 1-2 conversion CTAs only — the "functional beacon"
+- **No-Line Rule:** section separation via background color shifts, never border lines
+- **Ghost borders:** cards use 1px outline-variant at 15% opacity — invisible until noticed
+- **Ambient shadows:** blur 40px, spread -4px, 5% opacity — "soft glow" not "drop shadow"
+- **Glassmorphism:** header uses surface at 80% opacity with 16px backdrop-blur
+- **Icons:** Lucide at 1.5pt stroke weight to match Geist's precision
+- **Whitespace:** generous — if it looks like enough, add 20% more
 
 ### Immediate Actions
 

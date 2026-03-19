@@ -1,28 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf8;
-  --foreground: #1a1a18;
-  --muted: #1a1a18;
+  /* Surface hierarchy — "premium material stack" */
+  --surface: #f9f9f6;
+  --surface-container-low: #f4f4f1;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #ececea;
+
+  /* Primary (deep blacks) */
+  --primary: #000000;
+  --primary-container: #1c1b1b;
+  --on-primary: #f9f9f6;
+
+  /* Text hierarchy */
+  --on-surface: #1a1c1b;
+  --on-surface-variant: #444748;
+
+  /* Secondary — green accent (Chromatic Minimalism) */
+  --secondary: #006c4b;
+  --secondary-container: #64f9bc;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #00714e;
+
+  /* Outline */
+  --outline-variant: #c4c7c7;
+
+  /* Semantic aliases for Tailwind */
+  --background: var(--surface);
+  --foreground: var(--on-surface);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* Surface tokens */
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-surface-high: var(--surface-container-high);
+
+  /* Primary tokens */
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+
+  /* Text tokens */
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+
+  /* Secondary tokens */
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary: var(--on-secondary);
+
+  /* Outline */
+  --color-outline-variant: var(--outline-variant);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Ambient shadow */
+  --shadow-ambient: 0 4px 40px -4px rgba(26, 28, 27, 0.05);
+  --shadow-ambient-lg: 0 8px 60px -6px rgba(26, 28, 27, 0.07);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--surface);
+  color: var(--on-surface);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
 ::selection {
-  background: rgba(26, 26, 24, 0.12);
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Ghost border utility */
+.ghost-border {
+  box-shadow: inset 0 0 0 1px rgba(196, 199, 199, 0.15);
+}
+
+.ghost-border-hover:hover {
+  box-shadow: inset 0 0 0 1px rgba(196, 199, 199, 0.4);
 }
