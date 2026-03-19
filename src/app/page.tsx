@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { FaqSection } from "./components/faq-section";
+import { getFaqJsonLd, serializeJsonLd } from "./faq";
 import {
   ArrowRight,
   Shield,
   Layers,
   Zap,
   Eye,
-  ChevronRight,
   Cpu,
   Lock,
   BarChart3,
@@ -15,6 +16,8 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const faqJsonLd = serializeJsonLd(getFaqJsonLd());
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Nav */}
@@ -33,6 +36,11 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: faqJsonLd }}
+        />
+
         {/* Hero — what the BUSINESS gets */}
         <section className="py-24 sm:py-32 lg:py-36">
           <div className="mx-auto max-w-5xl px-6">
@@ -493,6 +501,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <FaqSection />
 
         {/* CTA */}
         <section
