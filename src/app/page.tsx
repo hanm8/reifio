@@ -81,25 +81,22 @@ export default function Home() {
                     { name: "Claude Code", logo: "/logos/anthropic.png" },
                     { name: "OpenAI Codex", logo: "/logos/openai.png" },
                     { name: "Cursor", logo: "/logos/cursor.png" },
+                    { name: "MCP Protocol", logo: "/logos/mcp.png" },
+                    { name: "Custom Agents", logo: "/logos/huggingface.png" },
                   ].map((tool) => (
                     <div key={tool.name} className="flex items-center gap-2.5">
                       <Image
                         src={tool.logo}
                         alt={tool.name}
-                        width={24}
-                        height={24}
-                        className="opacity-40 grayscale"
+                        width={400}
+                        height={400}
+                        className="h-6 w-6 rounded object-contain opacity-50 grayscale"
                       />
                       <span className="text-sm font-semibold text-foreground/35">
                         {tool.name}
                       </span>
                     </div>
                   ))}
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-sm font-semibold text-foreground/35">
-                      MCP Protocol
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
