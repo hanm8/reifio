@@ -407,26 +407,22 @@ export default function Home() {
             <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-foreground/30">
               Enterprise AI experience across
             </p>
-            <div className="mt-10 grid grid-cols-3 items-center justify-items-center gap-8 sm:grid-cols-5">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
               {[
                 { name: "AGL", logo: "/logos/agl.png" },
                 { name: "QBE", logo: "/logos/qbe.png" },
                 { name: "Harvey Norman", logo: "/logos/harveynorman.png" },
                 { name: "Specsavers", logo: "/logos/specsavers.png" },
-                { name: "Open Universities AU", logo: "/logos/oua.png" },
+                { name: "Open Universities Australia", logo: "/logos/oua.png" },
               ].map((client) => (
-                <div key={client.name} className="flex items-center gap-2.5">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={400}
-                    height={400}
-                    className="h-8 w-8 rounded-md object-contain grayscale opacity-60"
-                  />
-                  <span className="text-sm font-semibold text-foreground/30">
-                    {client.name}
-                  </span>
-                </div>
+                <Image
+                  key={client.name}
+                  src={client.logo}
+                  alt={client.name}
+                  width={400}
+                  height={400}
+                  className="h-10 w-10 rounded-lg object-contain grayscale opacity-50"
+                />
               ))}
             </div>
           </div>
