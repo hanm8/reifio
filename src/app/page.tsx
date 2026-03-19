@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaqSection } from "./components/faq-section";
+import { ContactForm } from "./components/contact-form";
 import { getFaqJsonLd, serializeJsonLd } from "./faq";
 import {
   ArrowRight,
@@ -66,7 +67,7 @@ export default function Home() {
             <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
               <div>
                 <p className="font-mono text-sm uppercase tracking-[0.2em] text-on-surface-variant/50">
-                  AI Agent Operations
+                  Workflows → AI agent skills
                 </p>
 
                 <h1 className="mt-10 text-[clamp(2.75rem,6.5vw,4.75rem)] font-bold leading-[1.05] tracking-[-0.04em] text-primary-container">
@@ -79,9 +80,9 @@ export default function Home() {
 
                 <p className="mt-10 max-w-xl text-lg leading-relaxed text-on-surface-variant">
                   Your best people have expertise that lives in their heads. We
-                  encode it into AI agent skills — so Claude, Codex, and Cowork
-                  can work like your best people, then scale it across the whole
-                  org.
+                  package it into agent skills — reusable instructions and
+                  workflows your AI tools can load on demand — so they work the
+                  way your team does, then scale across the whole org.
                 </p>
 
                 <div className="mt-12 flex flex-wrap gap-4">
@@ -89,7 +90,7 @@ export default function Home() {
                     href="#contact"
                     className="inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-3.5 text-sm font-semibold text-on-secondary transition-opacity hover:opacity-85"
                   >
-                    Book a discovery call
+                    Start a conversation
                     <ArrowRight className="size-4" strokeWidth={1.5} />
                   </a>
                   <a
@@ -139,23 +140,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-8 rounded-lg bg-white/[0.04] p-5">
-                  <div className="flex items-baseline justify-between">
-                    <span className="font-mono text-xs uppercase tracking-[0.15em] text-on-primary/25">
-                      Adoption this week
-                    </span>
-                    <span className="font-mono text-2xl font-bold text-on-primary">
-                      94%
-                    </span>
-                  </div>
-                  <div className="mt-3 flex items-end gap-1 h-12">
-                    {[40, 55, 65, 50, 75, 85, 94].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-sm bg-secondary"
-                        style={{ height: `${h}%`, opacity: 0.3 + (i / 10) }}
-                      />
-                    ))}
-                  </div>
+                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-on-primary/25">
+                    Example deployment
+                  </p>
                 </div>
               </div>
             </div>
@@ -225,7 +212,7 @@ export default function Home() {
                   value: "15hrs",
                   label: "per person per week on repetitive tasks",
                   detail:
-                    "Reports, approvals, data entry — done manually.",
+                    "Tasks AI agents can handle today.",
                 },
                 {
                   value: "22%",
@@ -261,9 +248,8 @@ export default function Home() {
                 We solve both sides of the problem.
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">
-                First, we turn your messy workflows into working AI agent
-                skills. Then, we give you a platform to manage and govern them
-                at scale.
+                We ship production agent workflows — then put governance
+                around them so they scale safely.
               </p>
             </div>
 
@@ -282,10 +268,9 @@ export default function Home() {
                   We build your AI skills.
                 </h3>
                 <p className="mt-4 text-base leading-relaxed text-on-surface-variant">
-                  We sit with your team, observe how they actually work, and
-                  convert their recurring workflows into AI agent skills and MCP
-                  integrations that plug into Claude Code, Cowork, Codex, or any
-                  LLM platform.
+                  We map how your team actually works, then ship agent
+                  workflows and integrations that run in the tools you already
+                  use.
                 </p>
                 <div className="mt-8 grid gap-5 sm:grid-cols-2">
                   {[
@@ -299,7 +284,7 @@ export default function Home() {
                       icon: Cpu,
                       title: "Skill development",
                       detail:
-                        "Build SKILL.md files, MCP servers, and Cowork plugins",
+                        "Build reusable agent workflows and integrations your team owns",
                     },
                     {
                       icon: Layers,
@@ -367,7 +352,7 @@ export default function Home() {
                     Scale.
                   </p>
                   <p className="mt-3 text-sm text-on-primary/40">
-                    One dashboard for all your AI agent skills — across teams,
+                    One place to manage all your AI agent skills — across teams,
                     platforms, and departments.
                   </p>
                 </div>
@@ -397,9 +382,10 @@ export default function Home() {
                   We help you manage them.
                 </h3>
                 <p className="mt-4 text-base leading-relaxed text-on-surface-variant">
-                  Skills are only useful if they&apos;re governed, distributed,
-                  and monitored. We set up your private skill marketplace and
-                  give you the controls to run it.
+                  Workflows are only useful if they&apos;re governed,
+                  distributed, and monitored. We set up approvals, access
+                  control, versioning, and an internal catalog your team
+                  manages.
                 </p>
                 <div className="mt-8 grid gap-5 sm:grid-cols-2">
                   {[
@@ -463,14 +449,13 @@ export default function Home() {
                   <p className="mt-6 text-base leading-relaxed text-on-surface-variant">
                     OpenClaw has 2 million weekly users. 22% of enterprises have
                     employees running AI agents as shadow IT. 135,000 instances
-                    are exposed to the public internet. The genie is out of the
-                    bottle.
+                    are exposed to the public internet.
                   </p>
                   <p className="mt-4 text-base leading-relaxed text-on-surface-variant">
-                    You have two choices: ban it and lose the productivity
-                    gains, or{" "}
+                    Put governance in place before it becomes a security
+                    incident — or{" "}
                     <span className="font-semibold text-primary-container">
-                      govern it and capture the value.
+                      lose visibility entirely.
                     </span>
                   </p>
                 </div>
@@ -501,35 +486,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Proof strip */}
-        <section className="bg-surface-low py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-on-surface-variant/35">
-              Enterprise AI experience across
-            </p>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-              {[
-                { name: "AGL", logo: "/logos/agl.png" },
-                { name: "QBE", logo: "/logos/qbe.png" },
-                { name: "Harvey Norman", logo: "/logos/harveynorman.png" },
-                { name: "Specsavers", logo: "/logos/specsavers.png" },
-                { name: "Open Universities Australia", logo: "/logos/oua.png" },
-              ].map((client) => (
-                <Image
-                  key={client.name}
-                  src={client.logo}
-                  alt={client.name}
-                  width={48}
-                  height={48}
-                  className="h-10 w-10 rounded-lg object-contain opacity-40 grayscale"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* About */}
-        <section className="bg-surface py-32">
+        <section className="bg-surface pt-32 pb-20">
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
@@ -537,22 +495,17 @@ export default function Home() {
                   About Reifio
                 </p>
                 <h2 className="mt-6 text-3xl font-bold tracking-[-0.04em] text-primary-container">
-                  We make the abstract real.
+                  Enterprise AI is our day job.
                 </h2>
-                <p className="mt-2 text-sm text-on-surface-variant/50 italic">
-                  reifio — from &ldquo;reify&rdquo;: to make something abstract
-                  concrete and real.
-                </p>
                 <p className="mt-6 text-base leading-relaxed text-on-surface-variant">
-                  We spent years building enterprise chatbots for brands like
-                  AGL, QBE, Harvey Norman, and Specsavers. We know what it
-                  takes to get AI into production in organisations where things
-                  can&apos;t break.
+                  We built and shipped production AI systems for AGL, QBE,
+                  Harvey Norman, and Specsavers — organisations where downtime
+                  is not an option and compliance is not optional.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-on-surface-variant">
-                  Now we apply that experience to the next wave: helping teams
-                  turn their internal workflows into governed, reusable AI
-                  agent skills — and giving them the platform to manage it all.
+                  Now we apply that experience to the next wave: turning
+                  internal workflows into reusable agent automations — and
+                  giving teams the controls to run them safely.
                 </p>
               </div>
               <div className="flex flex-col gap-5">
@@ -565,7 +518,7 @@ export default function Home() {
                   {
                     title: "Senior-led delivery",
                     detail:
-                      "The person who scopes is the person who delivers. No bait-and-switch with junior consultants.",
+                      "The person who scopes is the person who delivers. No handoff after signing.",
                   },
                   {
                     title: "Platform-agnostic",
@@ -587,6 +540,31 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            {/* Proof — inline, honest attribution */}
+            <div className="mt-12 pt-10" style={{ borderTop: '1px solid rgba(196, 199, 199, 0.15)' }}>
+              <p className="font-mono text-xs uppercase tracking-[0.15em] text-on-surface-variant/40">
+                Our team delivered enterprise AI at
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-4">
+                {[
+                  { name: "AGL Energy", logo: "/logos/agl.png" },
+                  { name: "QBE Insurance", logo: "/logos/qbe.png" },
+                  { name: "Harvey Norman", logo: "/logos/harveynorman.png" },
+                  { name: "Specsavers", logo: "/logos/specsavers.png" },
+                  { name: "Open Universities Australia", logo: "/logos/oua.png" },
+                ].map((client) => (
+                  <Image
+                    key={client.name}
+                    src={client.logo}
+                    alt={client.name}
+                    width={128}
+                    height={128}
+                    className="h-10 w-10 rounded-lg object-contain opacity-50 grayscale"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -605,23 +583,12 @@ export default function Home() {
                 as what they know.
               </h2>
               <p className="mt-8 text-lg leading-relaxed text-on-primary/45">
-                We help teams encode their expertise into AI agent skills —
-                and give them the platform to deploy, govern, and scale those
-                skills across the organisation. Let&apos;s talk.
+                30-minute call. We&apos;ll tell you which workflows are worth
+                encoding first — and what the first engagement looks like.
               </p>
               <div className="mt-12">
-                <a
-                  href="mailto:hello@reifio.com"
-                  className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-sm font-semibold text-on-secondary transition-opacity hover:opacity-85"
-                >
-                  hello@reifio.com
-                  <ArrowRight className="size-4" strokeWidth={1.5} />
-                </a>
+                <ContactForm />
               </div>
-              <p className="mt-8 text-sm text-on-primary/25">
-                No pitch deck. No demo. Just a conversation about what your team
-                does every week that an AI agent should be doing instead.
-              </p>
             </div>
           </div>
         </section>

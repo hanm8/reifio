@@ -7,7 +7,7 @@ export const faqItems: readonly FaqItem[] = [
   {
     question: "What do you actually deliver?",
     answer:
-      "We map a handful of high-friction workflows, turn them into working AI agent skills or integrations, and leave your team with code and operating patterns they can keep using after we leave.",
+      "We identify 3-5 high-friction workflows, ship 1-3 production agent workflows and integrations, and hand over the code and playbook your team can keep extending.",
   },
   {
     question: "Which tools do you support?",

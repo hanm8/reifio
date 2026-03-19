@@ -13,15 +13,13 @@ export function FaqSection() {
             FAQ
           </p>
           <h2 className="mt-6 text-[clamp(1.9rem,4vw,3rem)] font-bold tracking-[-0.04em] text-primary-container">
-            Questions
+            What teams
             <br />
-            serious buyers
-            <br />
-            ask
+            ask us
           </h2>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-on-surface-variant/60">
-            Practical answers to the questions that usually stand between
-            &ldquo;interesting&rdquo; and &ldquo;let&apos;s talk.&rdquo;
+            Practical answers to the questions that come up in every discovery
+            call.
           </p>
           <div className="mt-8 hidden lg:block">
             <a
@@ -63,15 +61,15 @@ export function FaqSection() {
               Still weighing it up?
             </h3>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-on-primary/45">
-              Email us and we&apos;ll tell you plainly whether this is a fit
-              and what the first win usually looks like.
+              Get in touch and we&apos;ll tell you plainly whether this is a
+              fit — and what the first engagement usually looks like.
             </p>
             <div className="mt-6">
               <a
-                href="mailto:hello@reifio.com?subject=Reifio%20enquiry"
+                href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-surface px-6 py-3 text-sm font-semibold text-primary-container transition-opacity hover:opacity-90"
               >
-                hello@reifio.com
+                Start a conversation
                 <ArrowRight className="size-4" strokeWidth={1.5} />
               </a>
             </div>
